@@ -1,0 +1,32 @@
+.chat{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 728px;
+    margin: 0 auto;
+    background-color: var(--bgcolor-light);
+    height: 100vh;
+}
+.header{
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 111;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: var(--main-color-bold);
+    border-radius: 0px 0px 10px 10px;
+}
+.exit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #fff;
+    padding: 10px;
+    background-color: var(--main-color-light);
+    border-radius: 10px;
+}

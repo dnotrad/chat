@@ -1,43 +1,18 @@
-import './App.css';
-import react, {useEffect, useState} from "react";
+import Chat from "./components/Chat";
+import Auth from "./components/Auth";
+import Registr from "./components/Registr";
+import { Switch, Route, Redirect } from "react-router-dom";
 import firebase from "./firebase";
+import "firebase/auth";
 
-const db = firebase.firestore();
-
-function App() {
-  const [inputValue, setInputValue] = useState("");
-  const [messages, setMessages] = useState([]);
-
-  useEffect( () => {
-    const unsubscribe = db.collection("messages").orderBy("message", "asc").onSnapshot(
-     function(snapshot) {
-       let messages = [];
-       snapshot.forEach( doc => {
-         messages.push(doc.data().message);
-       } )
-       setMessages( messages )
-    });
-    return () => unsubscribe();
-  }, [])
-
-  useEffect( () => {
-    console.log(messages);
-  }, [messages] )
-
-  let addMessage = (message) => {
-    db.collection("messages").add({
-      message
-    })
-  }
-
+const App = (props) => {
   return (
     <div className="App">
-      <input value={inputValue} type="text" onChange = { (e) => setInputValue(e.target.value)}/>
-      <button onClick = { () => addMessage(inputValue)}>ADD mes</button>
-      {messages.map( message => <div>{message}</div> )}
-    </div>
+      <Route path="/auth" component={Auth}/>
+      <Route path="/registr" component={Registr}/>
+      <Route path="/" component={Chat}/>
+    </div> 
   );
 }
-
 export default App;
 

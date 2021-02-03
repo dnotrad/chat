@@ -1,0 +1,68 @@
+.messageBlock{
+    align-self: flex-start;
+    margin-bottom: 20px;
+}
+.messageBlock.mine{
+    align-self: flex-end;
+}
+.inner{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.inner.reverse{
+    flex-direction: row-reverse;
+}
+.message{
+    margin-left: 5px;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 2px;
+}
+
+.messageBlock:last-child{
+    margin-bottom: 5px;
+}
+.author{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-transform: uppercase;
+    height: 30px;
+    min-width: 30px;
+    background-color: #333333;
+    border-radius: 50%;
+}
+.author.mine{
+    background-color: var(--main-color-bold);
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.info.mine{
+    align-items: flex-end;
+}
+.userEmail{
+    margin-left: 5px;
+    color: #fff;
+    opacity: .5;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.info.mine .userEmail{
+    margin-left: 0;
+    margin-right: 5px;
+}
+.info.mine .message{
+    margin-left: 0;
+    margin-right: 5px;
+    background-color: var(--main-color-light);
+    color: #fff;
+}
